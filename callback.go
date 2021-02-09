@@ -16,3 +16,12 @@ func VerifyURL(config *request.CommonConfig, req *request.VerifyURLReq) (string,
 	}
 	return string(echoStr), nil
 }
+func Decrypt(config *request.CommonConfig, req *request.DecryptReq) ([]byte, error) {
+	wxcpt := wxbizmsgcrypt.NewWXBizMsgCrypt(config.Token, config.EncodingAESKey, config.ReceiverId, wxbizmsgcrypt.XmlType)
+	timestamp := fmt.Sprintf("%d", req.Timestamp)
+	msg, err := wxcpt.DecryptMsg(req.MsgSignature, timestamp, req.Nonce, []byte(req.EchoStr))
+	if err != nil {
+		return nil, errors.New(err.ErrMsg)
+	}
+	return msg, nil
+}
