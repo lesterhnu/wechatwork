@@ -1,1 +1,4 @@
-package main
+package wechatwork
+
+type AccessToken struct {
+}

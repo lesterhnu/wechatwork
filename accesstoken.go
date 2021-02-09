@@ -1,4 +1,4 @@
-package access_token
+package wechatwork
 
 import (
 	"encoding/json"
@@ -8,13 +8,7 @@ import (
 	"wechatworksdk/util"
 )
 
-type accessToken struct {
-}
-
-func NewAccessToken() *accessToken {
-	return &accessToken{}
-}
-func (c *accessToken) GetAccessToken(req *request.GetAccessTokenReq) (*response.GetAccessTokenResp, error) {
+func GetAccessToken(req *request.GetAccessTokenReq) (*response.GetAccessTokenResp, error) {
 	url := fmt.Sprintf("%s?corpid=%s&corpsecret=%s", util.GET_ACCESS_TOKEN_URL, req.CorpId, req.CorpSecret)
 	content := util.Get(url)
 	var resp = new(response.GetAccessTokenResp)
