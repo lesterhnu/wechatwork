@@ -1,6 +1,6 @@
 package request
 
-type VerfiyUrlReq struct {
+type VerifyURLReq struct {
 	MsgSignature string `json:"msg_signature"`
 	Timestamp    int64  `json:"timestamp"`
 	Nonce        string `json:"nonce"`
