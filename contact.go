@@ -17,3 +17,6 @@ func AddContact(accessToken string, req *request.AddContactReq) (*response.AddCo
 	}
 	return resp, nil
 }
+func GetContact(accessToken string, req *request.GetContact) {
+
+}

@@ -39,3 +39,6 @@ type Miniprogram struct {
 	Appid      string `json:"appid"`
 	Page       string `json:"page"`
 }
+
+type GetContact struct {
+}
