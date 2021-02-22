@@ -42,3 +42,6 @@ type Miniprogram struct {
 
 type GetContact struct {
 }
+
+type DelContactWay struct {
+}
