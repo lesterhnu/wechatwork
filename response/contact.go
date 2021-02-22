@@ -6,6 +6,9 @@ type AddContactResp struct {
 	QrCode   string `json:"qr_code"`
 }
 
+type DelContactWayResp struct {
+}
+
 type GetContactWayResp struct {
 	ErrInfo
 	ContactWay ContactWay `json:"contact_way"`

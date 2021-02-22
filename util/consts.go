@@ -8,6 +8,9 @@ const (
 
 	// 获取联系方式
 	GetContactWayUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_contact_way"
+
+	// 删除联系方式
+	DelContactWayUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_contact_way"
 )
 
 const (

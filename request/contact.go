@@ -43,3 +43,6 @@ type Miniprogram struct {
 type GetContact struct {
 	ConfigId string `json:"config_id"`
 }
+
+type DelContactWay struct {
+}
