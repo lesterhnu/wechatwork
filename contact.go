@@ -36,3 +36,6 @@ func DelContact(accessToken string, req *request.DelContactWay) (*response.DelCo
 	}
 	return resp, nil
 }
+func (w *wxClient) UpdateContact() {
+
+}

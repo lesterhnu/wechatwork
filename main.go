@@ -1,56 +1,52 @@
 package wechatwork
 
-type WechatSdk struct {
-	CorpId                string
+import (
+	"github.com/go-playground/validator/v10"
+	"log"
+)
+
+type WxCfg struct {
+	CorpId                string `validate:"required"`
 	ContactToken          string
 	ContactEncodingAesKey string
-	ContactSecret         string
+	Secret                string `validate:"required"`
+	AccessToken           string
 }
 
-// func main() {
-// 	m := []string{
-// 		"callback",
-// 		"user",
-// 		"department",
-// 		"tag",
-// 		"batch",
-// 		"linkedcorp",
-// 		"externalcontact",
-// 		"agent",
-// 		"message",
-// 		"appchat",
-// 		"media",
-// 		"checkin",
-// 		"oa",
-// 		"journal",
-// 		"meetingroom",
-// 		"calendar",
-// 		"meeting",
-// 		"living",
-// 		"wedrive",
-// 		"dial",
-// 		"payment",
-// 		"corpgroup",
-// 		"invoice",
-// 		"school",
-// 		"report",
-// 	}
-// 	for _, v := range m {
-// 		os.Mkdir(v, 0755)
-// 		f1, _ := os.Create(v + "/" + v + "_iface.go")
-// 		f1.Write([]byte("package " + v + "\n" + "type " + v + "IFace interface {}"))
-// 		f1.Close()
-//
-// 		f2, _ := os.Create(v + "/" + v + "_impl.go")
-// 		f2.Write([]byte("package " + v + "\n" + "type " + v + " struct{} \nfunc New" + v + "()*" + v + "{\n\treturn &" + v + "{}\n}"))
-// 		f2.Close()
-//
-// 		f3, _ := os.Create("request/" + v + ".go")
-// 		f3.Write([]byte("package " + "request"))
-// 		f3.Close()
-// 		f4, _ := os.Create("response/" + v + ".go")
-// 		f4.Write([]byte("package " + "response"))
-// 		f4.Close()
-// 	}
-//
-// }
+type wxClient struct {
+	corpId                string
+	secret                string
+	contactToken          string
+	contactEncodingAesKey string
+	accessToken           string
+}
+
+// 参数校验
+func (w *WxCfg) Validate() error {
+	return validator.New().Struct(w)
+}
+func NewWxClient(cfg WxCfg) (*wxClient, error) {
+	err := cfg.Validate()
+	if err != nil {
+		return nil, err
+	}
+	client := &wxClient{
+		corpId:                cfg.CorpId,
+		secret:                cfg.Secret,
+		contactToken:          cfg.ContactToken,
+		contactEncodingAesKey: cfg.ContactEncodingAesKey,
+		accessToken:           cfg.AccessToken,
+	}
+	if cfg.AccessToken != "" {
+		return &wxClient{accessToken: cfg.AccessToken}, nil
+	}
+	client, err = client.GetAccessToken()
+	if err != nil {
+		return nil, err
+	}
+	return client, nil
+}
+
+func (w *wxClient) Test() {
+	log.Println("token:", w.accessToken)
+}
