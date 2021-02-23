@@ -1,4 +1,4 @@
-module github.com/lesterhnu/wechatwork
+module github.com/lesterhnu/wechatworksdk
 
 go 1.15
 
