@@ -20,12 +20,15 @@ type wxClient struct {
 	contactEncodingAesKey string
 	accessToken           string
 }
+type WxClientInterface interface {
+	Token()
+}
 
 // 参数校验
 func (w *WxCfg) Validate() error {
 	return validator.New().Struct(w)
 }
-func NewWxClient(cfg WxCfg) (*wxClient, error) {
+func NewWxClient(cfg *WxCfg) (*wxClient, error) {
 	err := cfg.Validate()
 	if err != nil {
 		return nil, err
@@ -37,10 +40,10 @@ func NewWxClient(cfg WxCfg) (*wxClient, error) {
 		contactEncodingAesKey: cfg.ContactEncodingAesKey,
 		accessToken:           cfg.AccessToken,
 	}
-	if cfg.AccessToken != "" {
-		return &wxClient{accessToken: cfg.AccessToken}, nil
+	if client.accessToken != "" {
+		return client, nil
 	}
-	client, err = client.GetAccessToken()
+	err = client.getAccessToken()
 	if err != nil {
 		return nil, err
 	}
@@ -48,5 +51,11 @@ func NewWxClient(cfg WxCfg) (*wxClient, error) {
 }
 
 func (w *wxClient) Test() {
+	log.Println("accessToken:", w.accessToken)
+	log.Println("corpId", w.corpId)
+	log.Println("secret", w.secret)
+	log.Println("contactToken", w.contactToken)
+}
+func (w *wxClient) Token() {
 	log.Println("token:", w.accessToken)
 }

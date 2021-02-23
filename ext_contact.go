@@ -3,9 +3,9 @@ package wechatwork
 import (
 	"encoding/json"
 	"fmt"
-	"wechatworksdk/request"
-	"wechatworksdk/response"
-	"wechatworksdk/util"
+	"github.com/lesterhnu/wechatworksdk/request"
+	"github.com/lesterhnu/wechatworksdk/response"
+	"github.com/lesterhnu/wechatworksdk/util"
 )
 
 func (w *wxClient) GetContactList(userId string) (*response.GetContactListResp, error) {
