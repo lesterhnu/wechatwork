@@ -2,6 +2,8 @@ package wechatwork
 
 import (
 	"github.com/go-playground/validator/v10"
+	"github.com/lesterhnu/wechatworksdk/request"
+	"github.com/lesterhnu/wechatworksdk/response"
 	"log"
 )
 
@@ -19,9 +21,6 @@ type wxClient struct {
 	contactToken          string
 	contactEncodingAesKey string
 	accessToken           string
-}
-type WxClientInterface interface {
-	Token()
 }
 
 // 参数校验
@@ -49,7 +48,6 @@ func NewWxClient(cfg *WxCfg) (*wxClient, error) {
 	}
 	return client, nil
 }
-
 func (w *wxClient) Test() {
 	log.Println("accessToken:", w.accessToken)
 	log.Println("corpId", w.corpId)
@@ -58,4 +56,48 @@ func (w *wxClient) Test() {
 }
 func (w *wxClient) Token() {
 	log.Println("token:", w.accessToken)
+}
+
+type WxClientInterface interface {
+	// 回调
+	// 验证回调url
+	VerifyURL(req *request.VerifyURLReq) (string, error)
+	// 解密回调信息
+	Decrypt(req *request.DecryptReq) ([]byte, error)
+
+	// 企业服务人员管理
+	// 获取配置了客户联系功能的成员列表
+	GetFollowUserList() (*response.GetFollowUserListResp, error)
+	// 配置客户联系「联系我」方式
+	AddContact(req *request.AddContactReq) (*response.AddContactResp, error)
+	// 获取企业已配置的「联系我」方式
+	GetContact(req *request.GetContact) (*response.GetContactWayResp, error)
+	// 更新企业已配置的「联系我」方式
+	UpdateContact(req request.UpdateContactWay) (*response.UpdateContactWayResp, error)
+	// 删除企业已配置的「联系我」方式
+	DelContact(req *request.DelContactWay) (*response.DelContactWayResp, error)
+
+	// 客户管理
+	// 获取客户列表
+	GetContactList(userId string) (*response.GetContactListResp, error)
+	// 获取客户详情
+	GetExtContactDetail(extUserId string) (*response.GetExtContactDetail, error)
+	// 批量获取客户详情
+	BatchGetExtContactDetail(req *request.BatchGetExtContactDetailReq) (*response.BatchGetExtContactDetailResp, error)
+	// 修改客户备注信息
+	UpdateExtContactRemark(req *request.UpdateExtContactRemarkReq) (*response.UpdateExtContactRemarkResp, error)
+
+	// 客户标签管理
+	// 获取企业标签库
+	GetCorpTagList(req *request.GetCorpTagListReq) (*response.GetCorpTagListResp, error)
+	// 添加企业客户标签
+	AddCorpTag(req *request.AddCorpTagReq) (*response.AddCorpTagResp, error)
+	// 编辑企业客户标签
+	UpdateCorpTag(req *request.UpdateCorpTagReq) (*response.UpdateCorpTagResp, error)
+	// 删除企业客户标签
+	DelCorpTag(req *request.DelCorpTagReq) (*response.DelCorpTagResp, error)
+	// 编辑客户企业标签
+	SetExtContactTag(req *request.SetExtContactTagReq) (*response.SetExtContactTagResp, error)
+
+	// 在职继承
 }

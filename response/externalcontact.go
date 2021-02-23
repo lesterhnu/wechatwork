@@ -79,3 +79,7 @@ type FollowInfo struct {
 	OperUserId     string   `json:"oper_user_id"`
 	AddWay         int      `json:"add_way"`
 }
+
+type UpdateExtContactRemarkResp struct {
+	ErrInfo
+}

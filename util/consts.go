@@ -27,15 +27,15 @@ const (
 	// 客户标签管理
 	// 管理企业客户标签
 	// 获取企业客户标签
-	GetCorpTagList = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list"
+	GetCorpTagListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list"
 	// 添加企业客户标签
-	AddCorpTag = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag"
+	AddCorpTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag"
 	// 编辑企业客户标签
-	UpdateCorpTag = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag"
+	UpdateCorpTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag"
 	// 删除企业客户标签
-	DelCorpTag = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag"
+	DelCorpTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcUrlontact/del_corp_tag"
 	// 编辑客户企业标签
-	SetExtContactTag = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/mark_tag"
+	SetExtContactTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/mark_tag"
 )
 
 const (
