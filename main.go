@@ -100,4 +100,12 @@ type WxClientInterface interface {
 	SetExtContactTag(req *request.SetExtContactTagReq) (*response.SetExtContactTagResp, error)
 
 	// 在职继承
+	// 分配在职成员的客户
+	// 查询客户接替状态
+
+	// 离职继承
+	// 获取待分配的离职成员列表
+	// 分配离职成员的客户
+	// 查询客户接替状态
+	// 分配离职成员的客户群
 }
