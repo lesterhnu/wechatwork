@@ -36,6 +36,28 @@ const (
 	DelCorpTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcUrlontact/del_corp_tag"
 	// 编辑客户企业标签
 	SetExtContactTagUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/mark_tag"
+
+	// 在职继承
+	// 分配在职成员的客户
+	TransferCustomerUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/transfer_customer"
+	// 查询客户接替状态
+	TransferResultUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/transfer_result"
+
+	// 离职继承
+	// 获取待分配的离职成员列表
+	GetUnassignedListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_unassigned_list"
+	// 分配离职成员的客户
+	ResignedTransferCustomerUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/resigned/transfer_customer"
+	// 查询客户接替状态
+	ResignedTransferResultUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/resigned/transfer_result"
+	// 分配离职成员的客户群
+	ResignedTransferChatGroupUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/transfer"
+
+	// 客户群管理
+	// 获取客户群列表
+	GetGroupChatListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/list"
+	// 获取客户群详情
+	GetGroupChatDetailUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/get"
 )
 
 const (
