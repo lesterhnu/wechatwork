@@ -7,8 +7,8 @@ import (
 	"wechatworksdk/util/wxbizmsgcrypt"
 )
 
-func VerifyURL(config *request.CommonConfig, req *request.VerifyURLReq) (string, error) {
-	wxcpt := wxbizmsgcrypt.NewWXBizMsgCrypt(config.Token, config.EncodingAESKey, config.ReceiverId, wxbizmsgcrypt.XmlType)
+func (w *wxClient) VerifyURL(req *request.VerifyURLReq) (string, error) {
+	wxcpt := wxbizmsgcrypt.NewWXBizMsgCrypt(w.contactToken, w.contactEncodingAesKey, w.corpId, wxbizmsgcrypt.XmlType)
 	timestamp := fmt.Sprintf("%d", req.Timestamp)
 	echoStr, err := wxcpt.VerifyURL(req.MsgSignature, timestamp, req.Nonce, req.Echostr)
 	if err != nil {
@@ -16,8 +16,8 @@ func VerifyURL(config *request.CommonConfig, req *request.VerifyURLReq) (string,
 	}
 	return string(echoStr), nil
 }
-func Decrypt(config *request.CommonConfig, req *request.DecryptReq) ([]byte, error) {
-	wxcpt := wxbizmsgcrypt.NewWXBizMsgCrypt(config.Token, config.EncodingAESKey, config.ReceiverId, wxbizmsgcrypt.XmlType)
+func (w *wxClient) Decrypt(req *request.DecryptReq) ([]byte, error) {
+	wxcpt := wxbizmsgcrypt.NewWXBizMsgCrypt(w.contactToken, w.contactEncodingAesKey, w.corpId, wxbizmsgcrypt.XmlType)
 	timestamp := fmt.Sprintf("%d", req.Timestamp)
 	msg, err := wxcpt.DecryptMsg(req.MsgSignature, timestamp, req.Nonce, []byte(req.EchoStr))
 	if err != nil {

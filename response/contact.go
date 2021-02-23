@@ -7,6 +7,10 @@ type AddContactResp struct {
 }
 
 type DelContactWayResp struct {
+	ErrInfo
+}
+type UpdateContactWayResp struct {
+	ErrInfo
 }
 
 type GetContactWayResp struct {
@@ -51,4 +55,9 @@ type Miniprogram struct {
 	PicMediaId string `json:"pic_media_id"`
 	Appid      string `json:"appid"`
 	Page       string `json:"page"`
+}
+
+type GetFollowUserListResp struct {
+	ErrInfo
+	FollowUser []string `json:"follow_user"`
 }

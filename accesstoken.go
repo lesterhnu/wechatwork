@@ -5,22 +5,15 @@ import (
 	"fmt"
 	"github.com/muesli/cache2go"
 	"time"
-	"wechatworksdk/request"
 	"wechatworksdk/response"
 	"wechatworksdk/util"
 )
 
-func GetAccessToken(req *request.GetAccessTokenReq) (*response.GetAccessTokenResp, error) {
-	url := fmt.Sprintf("%s?corpid=%s&corpsecret=%s", util.GetAccessTokenUrl, req.CorpId, req.CorpSecret)
-	content := util.Get(url)
-	var resp = new(response.GetAccessTokenResp)
-	if err := json.Unmarshal([]byte(content), resp); err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
 func (w *wxClient) GetAccessToken() (*wxClient, error) {
+	w, err := w.getAccessTokenFromCache()
+	if err == nil {
+		return w, nil
+	}
 	url := fmt.Sprintf("%s?corpid=%s&corpsecret=%s", util.GetAccessTokenUrl, w.corpId, w.secret)
 	content := util.Get(url)
 	var resp = new(response.GetAccessTokenResp)
@@ -28,6 +21,7 @@ func (w *wxClient) GetAccessToken() (*wxClient, error) {
 		return nil, err
 	}
 	w.accessToken = resp.AccessToken
+	w.setAccessTokenToCache()
 	return w, nil
 }
 func (w *wxClient) getAccessTokenFromCache() (*wxClient, error) {
