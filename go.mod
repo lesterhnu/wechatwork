@@ -1,4 +1,4 @@
-module wechatworksdk
+module wechatwork
 
 go 1.15
 
