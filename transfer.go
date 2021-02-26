@@ -8,10 +8,19 @@ import (
 	"github.com/lesterhnu/wechatworksdk/util"
 )
 
-func (w *wxClient) TransferCustomer(req *request.TransferCustomerReq) (*response.TransferCustomerResponse, error) {
+func (w *wxClient) TransferCustomer(req *request.TransferCustomerReq) (*response.TransferCustomerResp, error) {
 	url := fmt.Sprintf("%s?access_token=%s", util.TransferCustomerUrl, w.accessToken)
 	content := util.Post(url, req, util.ContentTypeJson)
-	var resp = new(response.TransferCustomerResponse)
+	var resp = new(response.TransferCustomerResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+func (w *wxClient) TransferResult(req *request.TransferResultReq) (*response.TransferResultResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.TransferCustomerUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.TransferCustomerResp)
 	if err := json.Unmarshal([]byte(content), resp); err != nil {
 		return nil, err
 	}

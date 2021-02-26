@@ -7,6 +7,12 @@ type TransferCustomerReq struct {
 	TransferSuccessMsg string   `json:"transfer_success_msg"`
 }
 
+type TransferResultReq struct {
+	HandoverUserid string `json:"handover_userid"`
+	TakeoverUserid string `json:"takeover_userid"`
+	Cursor         string `json:"cursor"`
+}
+
 type GetUnassignedListReq struct {
 	PageId   int    `json:"page_id"`
 	Cursor   string `json:"cursor"`

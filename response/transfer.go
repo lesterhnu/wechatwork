@@ -1,6 +1,6 @@
 package response
 
-type TransferCustomerResponse struct {
+type TransferCustomerResp struct {
 	ErrInfo
 	Customer []*CustomerItem `json:"customer"`
 }
@@ -8,6 +8,9 @@ type TransferCustomerResponse struct {
 type CustomerItem struct {
 	ExternalUserid string `json:"external_userid"`
 	Errcode        int    `json:"errcode"`
+}
+
+type TransferResultResp struct {
 }
 
 type GetUnassignedListResp struct {

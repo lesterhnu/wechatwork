@@ -107,6 +107,7 @@ type WxClientInterface interface {
 	// 离职继承
 	ResignedTransferCustomer(req *request.ResignedTransferCustomerReq) (*response.ResignedTransferCustomerResp, error)
 	// 获取待分配的离职成员列表
+
 	// 分配离职成员的客户
 	// 查询客户接替状态
 	// 分配离职成员的客户群
