@@ -58,6 +58,28 @@ const (
 	GetGroupChatListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/list"
 	// 获取客户群详情
 	GetGroupChatDetailUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/get"
+
+	// 客户朋友圈
+
+	// 消息推送
+	// 创建企业群发
+	AddMsgTemplateUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_msg_template"
+	// 获取群发记录列表
+	GetGroupmsgListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_groupmsg_list"
+	// 获取群发成员发送任务列表
+	GetGroupmsgTaskUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_groupmsg_task"
+	// 获取企业群发成员执行结果
+	GetGroupmsgSendResultUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_groupmsg_send_result"
+	// 发送新客户欢迎语
+	SendWelcomeMsgUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/send_welcome_msg"
+	// 添加入群欢迎语素材
+	AddGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/add"
+	// 编辑入群欢迎语素材
+	EditGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/edit"
+	// 获取入群欢迎语素材
+	GetGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/get"
+	// 删除入群欢迎语素材
+	DelGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/del"
 )
 
 const (
