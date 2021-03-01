@@ -18,7 +18,7 @@ func (w *wxClient) TransferCustomer(req *request.TransferCustomerReq) (*response
 	return resp, nil
 }
 func (w *wxClient) TransferResult(req *request.TransferResultReq) (*response.TransferResultResp, error) {
-	url := fmt.Sprintf("%s?access_token=%s", util.TransferCustomerUrl, w.accessToken)
+	url := fmt.Sprintf("%s?access_token=%s", util.TransferResultUrl, w.accessToken)
 	content := util.Post(url, req, util.ContentTypeJson)
 	var resp = new(response.TransferResultResp)
 	if err := json.Unmarshal([]byte(content), resp); err != nil {
