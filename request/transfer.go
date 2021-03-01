@@ -24,3 +24,9 @@ type ResignedTransferCustomerReq struct {
 	TakeoverUserid string   `json:"takeover_userid"`
 	ExternalUserid []string `json:"external_userid"`
 }
+
+type GetResignedTransferResultReq struct {
+	HandoverUserid string `json:"handover_userid"`
+	TakeoverUserid string `json:"takeover_userid"`
+	Cursor         string `json:"cursor"`
+}

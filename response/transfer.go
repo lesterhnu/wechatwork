@@ -29,3 +29,6 @@ type ResignedTransferCustomerResp struct {
 	ErrInfo
 	Customer []*CustomerItem `json:"customer"`
 }
+
+type GetResignedTransferResultResp struct {
+}

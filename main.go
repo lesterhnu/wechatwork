@@ -103,12 +103,15 @@ type WxClientInterface interface {
 	// 分配在职成员的客户
 	TransferCustomer(req *request.TransferCustomerReq) (*response.TransferCustomerResp, error)
 	// 查询客户接替状态
-	GetUnassignedList(req *request.GetUnassignedListReq) (*response.GetUnassignedListResp, error)
+	TransferResult(req *request.TransferResultReq) (*response.TransferResultResp, error)
+
 	// 离职继承
-	ResignedTransferCustomer(req *request.ResignedTransferCustomerReq) (*response.ResignedTransferCustomerResp, error)
 	// 获取待分配的离职成员列表
+	GetUnassignedList(req *request.GetUnassignedListReq) (*response.GetUnassignedListResp, error)
 
 	// 分配离职成员的客户
+	ResignedTransferCustomer(req *request.ResignedTransferCustomerReq) (*response.ResignedTransferCustomerResp, error)
 	// 查询客户接替状态
+	GetResignedTransferResult(req *request.GetResignedTransferResultReq) (*response.GetResignedTransferResultResp, error)
 	// 分配离职成员的客户群
 }

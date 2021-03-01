@@ -46,3 +46,12 @@ func (w *wxClient) ResignedTransferCustomer(req *request.ResignedTransferCustome
 	}
 	return resp, nil
 }
+func (w *wxClient) GetResignedTransferResult(req *request.GetResignedTransferResultReq) (*response.GetResignedTransferResultResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.ResignedTransferResultUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.GetResignedTransferResultResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
