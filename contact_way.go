@@ -55,3 +55,13 @@ func (w *wxClient) GetFollowUserList() (*response.GetFollowUserListResp, error) 
 	}
 	return resp, nil
 }
+
+func (w *wxClient) GetGroupChatList(req *request.GetGroupChatListReq) (*response.GetGroupChatListResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.GetGroupChatListUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.GetGroupChatListResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

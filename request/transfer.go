@@ -35,3 +35,6 @@ type ResignedTransferChatGroupReq struct {
 	ChatIdList []string `json:"chat_id_list"`
 	NewOwner   string   `json:"new_owner"`
 }
+
+type GetGroupChatListReq struct {
+}

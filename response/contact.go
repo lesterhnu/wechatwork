@@ -61,3 +61,13 @@ type GetFollowUserListResp struct {
 	ErrInfo
 	FollowUser []string `json:"follow_user"`
 }
+
+type GetGroupChatListResp struct {
+	ErrInfo
+	GroupChatList []*GroupChatInfo `json:"group_chat_list"`
+	NextCursor    string           `json:"next_cursor"`
+}
+type GroupChatInfo struct {
+	ChatId string `json:"chat_id"`
+	Status int    `json:"status"`
+}
