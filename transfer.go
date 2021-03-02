@@ -55,3 +55,13 @@ func (w *wxClient) GetResignedTransferResult(req *request.GetResignedTransferRes
 	}
 	return resp, nil
 }
+
+func (w *wxClient) ResignedTransferChatGroup(req *request.ResignedTransferChatGroupReq) (*response.ResignedTransferChatGroupResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.ResignedTransferChatGroupUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.ResignedTransferChatGroupResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

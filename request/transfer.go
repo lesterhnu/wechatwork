@@ -30,3 +30,8 @@ type GetResignedTransferResultReq struct {
 	TakeoverUserid string `json:"takeover_userid"`
 	Cursor         string `json:"cursor"`
 }
+
+type ResignedTransferChatGroupReq struct {
+	ChatIdList []string `json:"chat_id_list"`
+	NewOwner   string   `json:"new_owner"`
+}

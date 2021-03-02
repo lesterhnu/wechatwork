@@ -31,4 +31,20 @@ type ResignedTransferCustomerResp struct {
 }
 
 type GetResignedTransferResultResp struct {
+	ErrInfo
+	Customer []*ResignedTransferResultItem `json:"customer"`
+}
+type ResignedTransferResultItem struct {
+	ExternalUserid string `json:"external_userid"`
+	Status         int    `json:"status"`
+	TakeoverTime   int64  `json:"takeover_time"`
+}
+
+type ResignedTransferChatGroupResp struct {
+	ErrInfo
+	FailedChatList []*FailedChat `json:"failed_chat_list"`
+}
+type FailedChat struct {
+	ChatId string `json:"chat_id"`
+	ErrInfo
 }
