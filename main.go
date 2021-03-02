@@ -114,4 +114,5 @@ type WxClientInterface interface {
 	// 查询客户接替状态
 	GetResignedTransferResult(req *request.GetResignedTransferResultReq) (*response.GetResignedTransferResultResp, error)
 	// 分配离职成员的客户群
+	ResignedTransferChatGroup(req *request.ResignedTransferChatGroupReq) (*response.ResignedTransferChatGroupResp, error)
 }
