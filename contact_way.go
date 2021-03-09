@@ -75,3 +75,14 @@ func (w *wxClient) GetGroupChatDetail(req *request.GetGroupChatDetailReq) (*resp
 	}
 	return resp, nil
 }
+
+// 创建企业群发
+func (w *wxClient) AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.AddMsgTemplateResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.AddMsgTemplateUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.AddMsgTemplateResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

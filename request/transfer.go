@@ -48,3 +48,23 @@ type GetGroupChatListReq struct {
 type GetGroupChatDetailReq struct {
 	ChatId string
 }
+
+type AddMsgTemplateReq struct {
+	ChatType       string   `json:"chat_type"`
+	ExternalUserid []string `json:"external_userid"`
+	Sender         string   `json:"sender"`
+	Text           *struct {
+		Content string `json:"content"`
+	} `json:"text"`
+	Image *struct {
+		MediaId string `json:"media_id"`
+		PicUrl  string `json:"pic_url"`
+	} `json:"image"`
+	Link *struct {
+		Title  string `json:"title"`
+		Picurl string `json:"picurl"`
+		Desc   string `json:"desc"`
+		Url    string `json:"url"`
+	} `json:"link"`
+	Miniprogram *Miniprogram `json:"miniprogram"`
+}

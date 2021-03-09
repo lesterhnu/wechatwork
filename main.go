@@ -115,4 +115,13 @@ type WxClientInterface interface {
 	GetResignedTransferResult(req *request.GetResignedTransferResultReq) (*response.GetResignedTransferResultResp, error)
 	// 分配离职成员的客户群
 	ResignedTransferChatGroup(req *request.ResignedTransferChatGroupReq) (*response.ResignedTransferChatGroupResp, error)
+
+	// 获取客户群列表
+	GetGroupChatList(req *request.GetGroupChatListReq) (*response.GetGroupChatListResp, error)
+	// 获取客户群详情
+	GetGroupChatDetail(req *request.GetGroupChatDetailReq) (*response.GetGroupChatDetailResp, error)
+
+	// 消息推送
+	// 创建企业群发
+	AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.AddMsgTemplateResp, error)
 }

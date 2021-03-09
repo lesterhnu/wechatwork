@@ -89,3 +89,9 @@ type GetGroupChatDetailResp struct {
 		} `json:"member_list"`
 	} `json:"group_chat"`
 }
+
+type AddMsgTemplateResp struct {
+	ErrInfo
+	FailList []string `json:"fail_list"`
+	Msgid    string   `json:"msgid"`
+}
