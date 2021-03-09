@@ -73,4 +73,19 @@ type GroupChatInfo struct {
 }
 
 type GetGroupChatDetailResp struct {
+	ErrInfo
+	GroupChat []*struct {
+		ChatId     string `json:"chat_id"`
+		Name       string `json:"name"`
+		Owner      string `json:"owner"`
+		CreateTime int64  `json:"create_time"`
+		Notice     string `json:"notice"`
+		MemberList []*struct {
+			Userid    string `json:"userid"`
+			Type      int    `json:"type"`
+			JoinTime  int64  `json:"join_time"`
+			JoinScene int    `json:"join_scene"`
+			Unionid   string `json:"unionid"`
+		} `json:"member_list"`
+	} `json:"group_chat"`
 }

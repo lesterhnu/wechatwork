@@ -37,7 +37,14 @@ type ResignedTransferChatGroupReq struct {
 }
 
 type GetGroupChatListReq struct {
+	StatusFilter int `json:"status_filter"`
+	OwnerFilter  struct {
+		UseridList []string `json:"userid_list"`
+	} `json:"owner_filter"`
+	Cursor string `json:"cursor"`
+	Limit  int    `json:"limit"`
 }
 
 type GetGroupChatDetailReq struct {
+	ChatId string
 }
