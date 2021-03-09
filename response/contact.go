@@ -71,3 +71,6 @@ type GroupChatInfo struct {
 	ChatId string `json:"chat_id"`
 	Status int    `json:"status"`
 }
+
+type GetGroupChatDetailResp struct {
+}

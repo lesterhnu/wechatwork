@@ -38,3 +38,6 @@ type ResignedTransferChatGroupReq struct {
 
 type GetGroupChatListReq struct {
 }
+
+type GetGroupChatDetailReq struct {
+}
