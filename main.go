@@ -124,4 +124,6 @@ type WxClientInterface interface {
 	// 消息推送
 	// 创建企业群发
 	AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.AddMsgTemplateResp, error)
+	// 获取群发记录
+	GetGroupmsgList(req *request.GetGroupmsgListReq) (*response.GetGroupmsgListResp, error)
 }
