@@ -86,3 +86,14 @@ func (w *wxClient) AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.Add
 	}
 	return resp, nil
 }
+
+// 获取群发记录
+func (w *wxClient) GetGroupmsgList(req *request.GetGroupmsgListReq) (*response.GetGroupmsgListResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.GetGroupmsgListUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.GetGroupmsgListResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

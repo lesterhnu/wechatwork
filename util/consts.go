@@ -61,7 +61,7 @@ const (
 
 	// 客户朋友圈
 	// 获取朋友圈发表记录
-	GetMomentListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_moment_list"
+	// GetMomentListUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_moment_list"
 
 	// 消息推送
 	// 创建企业群发

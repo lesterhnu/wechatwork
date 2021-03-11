@@ -95,3 +95,34 @@ type AddMsgTemplateResp struct {
 	FailList []string `json:"fail_list"`
 	Msgid    string   `json:"msgid"`
 }
+
+type GetGroupmsgListResp struct {
+	ErrInfo
+	NextCursor   string `json:"next_cursor"`
+	GroupMsgList []*struct {
+		Msgid      string `json:"msgid"`
+		Creator    string `json:"creator"`
+		CreateTime string `json:"create_time"`
+		CreateType int    `json:"create_type"`
+		Text       *struct {
+			Content string `json:"content"`
+		} `json:"text"`
+		Image *struct {
+			MediaId string `json:"media_id"`
+		} `json:"image"`
+		Link *struct {
+			Title  string `json:"title"`
+			Picurl string `json:"picurl"`
+			Desc   string `json:"desc"`
+			Url    string `json:"url"`
+		} `json:"link"`
+		Miniprogram *struct {
+			Title string `json:"title"`
+			Appid string `json:"appid"`
+			Page  string `json:"page"`
+		}
+		Video *struct {
+			MediaId string `json:"media_id"`
+		} `json:"video"`
+	}
+}
