@@ -126,4 +126,6 @@ type WxClientInterface interface {
 	AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.AddMsgTemplateResp, error)
 	// 获取群发记录
 	GetGroupmsgList(req *request.GetGroupmsgListReq) (*response.GetGroupmsgListResp, error)
+	//获取群发成员发送任务列表
+	GetGroupmsgTask(req *request.GetGroupmsgTaskReq) (*response.GetGroupmsgTaskResp, error)
 }

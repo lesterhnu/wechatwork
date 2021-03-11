@@ -126,3 +126,6 @@ type GetGroupmsgListResp struct {
 		} `json:"video"`
 	}
 }
+
+type GetGroupmsgTaskResp struct {
+}

@@ -78,3 +78,6 @@ type GetGroupmsgListReq struct {
 	Limit      int    `json:"limit"`
 	Cursor     string `json:"cursor"`
 }
+
+type GetGroupmsgTaskReq struct {
+}
