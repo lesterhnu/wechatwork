@@ -107,3 +107,12 @@ func (w *wxClient) GetGroupmsgTask(req *request.GetGroupmsgTaskReq) (*response.G
 	}
 	return resp, nil
 }
+func (w *wxClient) GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) (*response.GetGroupmsgSendResultResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.GetGroupmsgSendResultUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.GetGroupmsgSendResultResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

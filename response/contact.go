@@ -129,3 +129,6 @@ type GetGroupmsgListResp struct {
 
 type GetGroupmsgTaskResp struct {
 }
+
+type GetGroupmsgSendResultResp struct {
+}
