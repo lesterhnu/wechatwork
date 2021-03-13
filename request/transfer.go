@@ -80,6 +80,13 @@ type GetGroupmsgListReq struct {
 }
 
 type GetGroupmsgTaskReq struct {
+	MsgId  string `json:"msg_id"`
+	Limit  int    `json:"limit"`
+	Cursor string `json:"cursor"`
 }
 type GetGroupmsgSendResultReq struct {
+	MsgId  string `json:"msg_id"`
+	Userid string `json:"userid"`
+	Limit  int    `json:"limit"`
+	Cursor string `json:"cursor"`
 }

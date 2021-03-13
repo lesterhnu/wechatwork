@@ -128,7 +128,22 @@ type GetGroupmsgListResp struct {
 }
 
 type GetGroupmsgTaskResp struct {
+	ErrInfo
+	NextCursor string `json:"next_cursor"`
+	TaskList   []*struct {
+		Userid   string `json:"userid"`
+		Status   int    `json:"status"`
+		SendTime int64  `json:"send_time"`
+	} `json:"task_list"`
 }
 
 type GetGroupmsgSendResultResp struct {
+	ErrInfo
+	NextCursor string `json:"next_cursor"`
+	SendList   []*struct {
+		ExternalUserid string `json:"external_userid"`
+		ChatId         string `json:"chat_id"`
+		Status         int    `json:"status"`
+		SendTime       int64  `json:"send_time"`
+	} `json:"send_list"`
 }
