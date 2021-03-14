@@ -147,3 +147,6 @@ type GetGroupmsgSendResultResp struct {
 		SendTime       int64  `json:"send_time"`
 	} `json:"send_list"`
 }
+
+type SendWelcomeMsgResp struct {
+}

@@ -128,4 +128,8 @@ type WxClientInterface interface {
 	GetGroupmsgList(req *request.GetGroupmsgListReq) (*response.GetGroupmsgListResp, error)
 	//获取群发成员发送任务列表
 	GetGroupmsgTask(req *request.GetGroupmsgTaskReq) (*response.GetGroupmsgTaskResp, error)
+
+	GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) (*response.GetGroupmsgSendResultResp, error)
+
+	SendWelcomeMsg(req *request.SendWelcomeMsgReq) (*response.SendWelcomeMsgResp, error)
 }

@@ -116,3 +116,13 @@ func (w *wxClient) GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) 
 	}
 	return resp, nil
 }
+
+func (w *wxClient) SendWelcomeMsg(req *request.SendWelcomeMsgReq) (*response.SendWelcomeMsgResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.SendWelcomeMsgUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.SendWelcomeMsgResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
