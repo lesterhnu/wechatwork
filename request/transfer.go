@@ -92,3 +92,6 @@ type GetGroupmsgSendResultReq struct {
 }
 type SendWelcomeMsgReq struct {
 }
+
+type AddGroupWelcomeTemplateReq struct {
+}

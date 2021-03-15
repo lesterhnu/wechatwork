@@ -150,3 +150,6 @@ type GetGroupmsgSendResultResp struct {
 
 type SendWelcomeMsgResp struct {
 }
+
+type AddGroupWelcomeTemplateResp struct {
+}
