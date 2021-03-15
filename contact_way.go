@@ -120,7 +120,7 @@ func (w *wxClient) GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) 
 func (w *wxClient) AddGroupWelcomeTemplate(req *request.AddGroupWelcomeTemplateReq) (*response.AddGroupWelcomeTemplateResp, error) {
 	url := fmt.Sprintf("%s?access_token=%s", util.AddGroupWelcomeTemplateUrl, w.accessToken)
 	content := util.Post(url, req, util.ContentTypeJson)
-	var resp = new(response.GetGroupmsgSendResultResp)
+	var resp = new(response.AddGroupWelcomeTemplateResp)
 	if err := json.Unmarshal([]byte(content), resp); err != nil {
 		return nil, err
 	}
