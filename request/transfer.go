@@ -90,3 +90,6 @@ type GetGroupmsgSendResultReq struct {
 	Limit  int    `json:"limit"`
 	Cursor string `json:"cursor"`
 }
+
+type AddGroupWelcomeTemplateReq struct {
+}
