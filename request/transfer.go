@@ -95,3 +95,5 @@ type SendWelcomeMsgReq struct {
 
 type AddGroupWelcomeTemplateReq struct {
 }
+type EditGroupWelcomeTemplateReq struct {
+}

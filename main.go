@@ -132,4 +132,8 @@ type WxClientInterface interface {
 	GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) (*response.GetGroupmsgSendResultResp, error)
 
 	SendWelcomeMsg(req *request.SendWelcomeMsgReq) (*response.SendWelcomeMsgResp, error)
+
+	AddGroupWelcomeTemplate(req *request.AddGroupWelcomeTemplateReq) (*response.AddGroupWelcomeTemplateResp, error)
+
+	EditGroupWelcomeTemplate(req *request.EditGroupWelcomeTemplateReq) (*response.EditGroupWelcomeTemplateResp, error)
 }
