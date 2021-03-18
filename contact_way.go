@@ -146,3 +146,13 @@ func (w *wxClient) EditGroupWelcomeTemplate(req *request.EditGroupWelcomeTemplat
 	}
 	return resp, nil
 }
+
+func (w *wxClient) DelGroupWelcomeTemplate(req *request.DelGroupWelcomeTemplateReq) (*response.DelGroupWelcomeTemplateResp, error) {
+	url := fmt.Sprintf("%s?access_token=%s", util.DelGroupWelcomeTemplateUrl, w.accessToken)
+	content := util.Post(url, req, util.ContentTypeJson)
+	var resp = new(response.DelGroupWelcomeTemplateResp)
+	if err := json.Unmarshal([]byte(content), resp); err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

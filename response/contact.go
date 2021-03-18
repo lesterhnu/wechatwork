@@ -156,3 +156,6 @@ type AddGroupWelcomeTemplateResp struct {
 
 type EditGroupWelcomeTemplateResp struct {
 }
+
+type DelGroupWelcomeTemplateResp struct {
+}

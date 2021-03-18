@@ -97,3 +97,5 @@ type AddGroupWelcomeTemplateReq struct {
 }
 type EditGroupWelcomeTemplateReq struct {
 }
+type DelGroupWelcomeTemplateReq struct {
+}
