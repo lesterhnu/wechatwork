@@ -149,13 +149,17 @@ type GetGroupmsgSendResultResp struct {
 }
 
 type SendWelcomeMsgResp struct {
+	ErrInfo
 }
 
 type AddGroupWelcomeTemplateResp struct {
+	ErrInfo
 }
 
 type EditGroupWelcomeTemplateResp struct {
+	ErrInfo
 }
 
 type DelGroupWelcomeTemplateResp struct {
+	ErrInfo
 }
