@@ -154,6 +154,7 @@ type SendWelcomeMsgResp struct {
 
 type AddGroupWelcomeTemplateResp struct {
 	ErrInfo
+	TemplateId string
 }
 
 type EditGroupWelcomeTemplateResp struct {

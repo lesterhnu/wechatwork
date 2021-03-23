@@ -91,6 +91,11 @@ type GetGroupmsgSendResultReq struct {
 	Cursor string `json:"cursor"`
 }
 type SendWelcomeMsgReq struct {
+	WelcomeCode string       `json:"welcome_code"`
+	Text        *Text        `json:"text"`
+	Image       *Image       `json:"image"`
+	Link        *Link        `json:"link"`
+	Miniprogram *Miniprogram `json:"miniprogram"`
 }
 
 type AddGroupWelcomeTemplateReq struct {
