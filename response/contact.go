@@ -156,7 +156,13 @@ type AddGroupWelcomeTemplateResp struct {
 	ErrInfo
 	TemplateId string
 }
-
+type GetGroupWelcomeTemplateResp struct {
+	ErrInfo
+	Text        *Text        `json:"text"`
+	Image       *Image       `json:"image"`
+	Link        *Link        `json:"link"`
+	Miniprogram *Miniprogram `json:"miniprogram"`
+}
 type EditGroupWelcomeTemplateResp struct {
 	ErrInfo
 }

@@ -99,8 +99,25 @@ type SendWelcomeMsgReq struct {
 }
 
 type AddGroupWelcomeTemplateReq struct {
+	Text        *Text        `json:"text"`
+	Image       *Image       `json:"image"`
+	Link        *Link        `json:"link"`
+	Miniprogram *Miniprogram `json:"miniprogram"`
+	Agentid     int64        `json:"agentid"`
+	Notify      int          `json:"notify"`
 }
 type EditGroupWelcomeTemplateReq struct {
+	TemplateId  string       `json:"template_id"`
+	Text        *Text        `json:"text"`
+	Image       *Image       `json:"image"`
+	Link        *Link        `json:"link"`
+	Miniprogram *Miniprogram `json:"miniprogram"`
+	Agentid     int64        `json:"agentid"`
+}
+type GetGroupWelcomeTemplateReq struct {
+	TemplateId string `json:"template_id"`
 }
 type DelGroupWelcomeTemplateReq struct {
+	TemplateId string `json:"template_id"`
+	Agentid    int64  `json:"agentid"`
 }
