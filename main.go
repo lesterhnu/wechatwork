@@ -137,5 +137,7 @@ type WxClientInterface interface {
 
 	EditGroupWelcomeTemplate(req *request.EditGroupWelcomeTemplateReq) (*response.EditGroupWelcomeTemplateResp, error)
 
+	GetGroupWelcomeTemplate(req *request.GetGroupWelcomeTemplateReq) (*response.GetGroupWelcomeTemplateResp, error)
+
 	DelGroupWelcomeTemplate(req *request.DelGroupWelcomeTemplateReq) (*response.DelGroupWelcomeTemplateResp, error)
 }
