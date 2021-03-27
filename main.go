@@ -126,7 +126,7 @@ type WxClientInterface interface {
 	AddMsgTemplate(req *request.AddMsgTemplateReq) (*response.AddMsgTemplateResp, error)
 	// 获取群发记录
 	GetGroupmsgList(req *request.GetGroupmsgListReq) (*response.GetGroupmsgListResp, error)
-	//获取群发成员发送任务列表
+	// 获取群发成员发送任务列表
 	GetGroupmsgTask(req *request.GetGroupmsgTaskReq) (*response.GetGroupmsgTaskResp, error)
 
 	GetGroupmsgSendResult(req *request.GetGroupmsgSendResultReq) (*response.GetGroupmsgSendResultResp, error)
@@ -140,4 +140,8 @@ type WxClientInterface interface {
 	GetGroupWelcomeTemplate(req *request.GetGroupWelcomeTemplateReq) (*response.GetGroupWelcomeTemplateResp, error)
 
 	DelGroupWelcomeTemplate(req *request.DelGroupWelcomeTemplateReq) (*response.DelGroupWelcomeTemplateResp, error)
+
+	// 数据统计
+	// 获取「联系客户统计」数据
+	GetUserBehaviorData(req *request.GetUserBehaviorDataReq) (*response.GetUserBehaviorDataResp, error)
 }

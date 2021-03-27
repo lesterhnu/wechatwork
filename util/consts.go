@@ -82,6 +82,14 @@ const (
 	GetGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/get"
 	// 删除入群欢迎语素材
 	DelGroupWelcomeTemplateUrl = ":https://qyapi.weixin.qq.com/cgi-bin/externalcontact/group_welcome_template/del"
+
+	// 统计管理
+	// 获取【联系客户统计】数据
+	GetUserBehaviorDataUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_user_behavior_data"
+	// 获取【群聊数据统计】数据 按群主聚合的方式
+	GetGroupChatStatisticByGroupOwnerUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/statistic"
+	// 获取【群聊数据统计】数据 按自然日聚合的方式
+	GetGroupChatStatisticByDayUrl = "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/groupchat/statistic_group_by_day"
 )
 
 const (
