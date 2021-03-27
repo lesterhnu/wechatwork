@@ -144,4 +144,6 @@ type WxClientInterface interface {
 	// 数据统计
 	// 获取「联系客户统计」数据
 	GetUserBehaviorData(req *request.GetUserBehaviorDataReq) (*response.GetUserBehaviorDataResp, error)
+	// 获取【群聊数据统计】数据 按群主聚合的方式
+	GetGroupChatStatisticByGroupOwner(req *request.GetGroupChatStatisticByGroupOwnerReq) (*response.GetGroupChatStatisticByGroupOwnerResp, error)
 }
