@@ -3,8 +3,8 @@ package wechatwork
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/lesterhnu/wechatworksdk/response"
-	"github.com/lesterhnu/wechatworksdk/util"
+	"github.com/lesterhnu/wechatwork/response"
+	"github.com/lesterhnu/wechatwork/util"
 	"github.com/muesli/cache2go"
 	"log"
 	"time"

@@ -3,9 +3,9 @@ package wechatwork
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/lesterhnu/wechatworksdk/request"
-	"github.com/lesterhnu/wechatworksdk/response"
-	"github.com/lesterhnu/wechatworksdk/util"
+	"github.com/lesterhnu/wechatwork/request"
+	"github.com/lesterhnu/wechatwork/response"
+	"github.com/lesterhnu/wechatwork/util"
 )
 
 func (w *wxClient) AddContact(req *request.AddContactReq) (*response.AddContactResp, error) {

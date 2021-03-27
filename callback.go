@@ -3,8 +3,8 @@ package wechatwork
 import (
 	"errors"
 	"fmt"
-	"github.com/lesterhnu/wechatworksdk/request"
-	"github.com/lesterhnu/wechatworksdk/util/wxbizmsgcrypt"
+	"github.com/lesterhnu/wechatwork/request"
+	"github.com/lesterhnu/wechatwork/util/wxbizmsgcrypt"
 )
 
 func (w *wxClient) VerifyURL(req *request.VerifyURLReq) (string, error) {

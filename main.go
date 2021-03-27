@@ -2,8 +2,8 @@ package wechatwork
 
 import (
 	"github.com/go-playground/validator/v10"
-	"github.com/lesterhnu/wechatworksdk/request"
-	"github.com/lesterhnu/wechatworksdk/response"
+	"github.com/lesterhnu/wechatwork/request"
+	"github.com/lesterhnu/wechatwork/response"
 	"log"
 )
 
